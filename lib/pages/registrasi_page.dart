@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:ucp1_flutter/pages/login_page.dart';
 
@@ -9,8 +11,12 @@ class RegistrasiPage extends StatefulWidget {
 }
 
 class _RegistrasiPageState extends State<RegistrasiPage> {
+  final TextEditingController namaLengkapController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
+  final TextEditingController noHPController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController konfirmasiPasswordController =
+      TextEditingController();
 
   @override
   void initState() {
@@ -33,9 +39,10 @@ class _RegistrasiPageState extends State<RegistrasiPage> {
               ),
               SizedBox(height: 16),
               TextFormField(
-                controller: emailController,
+                controller: namaLengkapController,
                 decoration: const InputDecoration(
                   labelText: 'Nama Lengkap',
+                  prefixIcon: Icon(Icons.person),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
@@ -51,6 +58,7 @@ class _RegistrasiPageState extends State<RegistrasiPage> {
                 controller: emailController,
                 decoration: const InputDecoration(
                   labelText: 'Email',
+                  prefixIcon: Icon(Icons.email),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
@@ -63,9 +71,10 @@ class _RegistrasiPageState extends State<RegistrasiPage> {
                 },
               ),
               TextFormField(
-                controller: emailController,
+                controller: noHPController,
                 decoration: const InputDecoration(
                   labelText: 'No HP',
+                  prefixIcon: Icon(Icons.phone),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
@@ -81,6 +90,8 @@ class _RegistrasiPageState extends State<RegistrasiPage> {
                 controller: passwordController,
                 decoration: const InputDecoration(
                   labelText: 'Password',
+                  prefixIcon: Icon(Icons.lock),
+                  suffixIcon: Icon(Icons.visibility_off),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
@@ -94,9 +105,11 @@ class _RegistrasiPageState extends State<RegistrasiPage> {
                 },
               ),
               TextFormField(
-                controller: passwordController,
+                controller: konfirmasiPasswordController,
                 decoration: const InputDecoration(
                   labelText: 'Konfirmasi Password',
+                  prefixIcon: Icon(Icons.lock),
+                  suffixIcon: Icon(Icons.visibility_off),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
@@ -109,6 +122,7 @@ class _RegistrasiPageState extends State<RegistrasiPage> {
                   return null;
                 },
               ),
+              SizedBox(height: 30),
               ElevatedButton(onPressed: () {}, child: Text('Daftar')),
               TextButton(
                 onPressed: () {
