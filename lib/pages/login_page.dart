@@ -29,11 +29,7 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(
-                'assets/images/logo_umy.png',
-                width: 100,
-                height: 100,
-              ),
+              Image.asset('assets/logo_umy.png', width: 200, height: 200),
               Text(
                 'SELAMAT DATANG KEMBALI',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
@@ -71,6 +67,7 @@ class _LoginPageState extends State<LoginPage> {
                   return null;
                 },
               ),
+              SizedBox(height: 30),
               ElevatedButton(
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
