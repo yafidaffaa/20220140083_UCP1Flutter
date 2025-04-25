@@ -71,16 +71,21 @@ class _LoginPageState extends State<LoginPage> {
                 },
               ),
               SizedBox(height: 30),
-              ElevatedButton(
-                onPressed: () {
-                  if (formKey.currentState!.validate()) {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(builder: (context) => const HomePage()),
-                    );
-                  }
-                },
-                child: Text('Masuk'),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    if (formKey.currentState!.validate()) {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomePage(),
+                        ),
+                      );
+                    }
+                  },
+                  child: Text('Masuk'),
+                ),
               ),
               TextButton(
                 onPressed: () {

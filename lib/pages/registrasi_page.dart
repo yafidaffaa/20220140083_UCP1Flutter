@@ -71,6 +71,7 @@ class _RegistrasiPageState extends State<RegistrasiPage> {
                 },
               ),
               TextFormField(
+                keyboardType: TextInputType.phone,
                 controller: noHPController,
                 decoration: const InputDecoration(
                   labelText: 'No HP',
@@ -123,7 +124,10 @@ class _RegistrasiPageState extends State<RegistrasiPage> {
                 },
               ),
               SizedBox(height: 30),
-              ElevatedButton(onPressed: () {}, child: Text('Daftar')),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(onPressed: () {}, child: Text('Daftar')),
+              ),
               TextButton(
                 onPressed: () {
                   Navigator.push(
