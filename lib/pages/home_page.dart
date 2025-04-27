@@ -153,6 +153,33 @@ class HomePage extends StatelessWidget {
                 ),
               ],
             ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
+                );
+              },
+              child: Container(
+                width: 370,
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 50, 140, 27),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Column(
+                  children: [
+                    Icon(Icons.receipt, color: Colors.white, size: 50),
+                    const SizedBox(height: 10),
+                    const Text(
+                      'Barang Masuk/Keluar',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
