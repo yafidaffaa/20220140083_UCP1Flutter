@@ -275,7 +275,9 @@ class _RegistrasiPageState extends State<RegistrasiPage> {
                             Navigator.pushAndRemoveUntil(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const HomePage(),
+                                builder:
+                                    (context) =>
+                                        HomePage(email: emailController.text),
                               ),
                               (Route<dynamic> route) => false,
                             );
