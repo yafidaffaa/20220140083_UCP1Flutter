@@ -171,6 +171,58 @@ class _PiketGudangPageState extends State<PiketGudangPage> {
                 'Tugas Piket',
                 style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
               ),
+              const SizedBox(height: 7),
+              Row(
+                children: [
+                  Expanded(
+                    child: TextFormField(
+                      controller: _tugasController,
+                      decoration: InputDecoration(
+                        hintText: 'Tugas Piket',
+                        filled: true,
+                        fillColor: Colors.white,
+                        border: const OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(20)),
+                        ),
+                        contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 16,
+                          vertical: 12,
+                        ),
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Tugas piket tidak boleh kosong';
+                        }
+                        return null;
+                      },
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        _timeError = _selectedDate == null;
+                      });
+                      if (_formKey.currentState!.validate() && !_timeError) {
+                        _addTask();
+                      }
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color.fromARGB(255, 50, 140, 27),
+                      foregroundColor: Colors.white,
+                      elevation: 0,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 24,
+                        vertical: 12,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                    child: const Text('Tambah'),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
