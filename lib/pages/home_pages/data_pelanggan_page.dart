@@ -245,6 +245,81 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
                       ),
                     ],
                   ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 50),
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color.fromARGB(
+                            255,
+                            50,
+                            140,
+                            27,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          padding: EdgeInsets.all(20),
+                        ),
+                        onPressed: () {
+                          if (formKey.currentState!.validate()) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder:
+                                    (context) => DetailDataPelangganPage(
+                                      alamat: alamatController.text,
+                                      email: emailController.text,
+                                      kodePos: kodePosController.text,
+                                      namaCust: namaCustController.text,
+                                      noHP: noHPController.text,
+                                      provinsi: provinsiController.text,
+                                    ),
+                              ),
+                            );
+                          }
+                        },
+                        child: Text(
+                          'Simpan',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20),
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color.fromARGB(
+                            255,
+                            255,
+                            255,
+                            255,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            side: BorderSide(
+                              color: Color.fromARGB(255, 50, 140, 27),
+                              width: 2,
+                            ),
+                          ),
+                          padding: EdgeInsets.all(20),
+                        ),
+                        onPressed: () {
+                          formKey.currentState?.reset();
+                        },
+                        child: Text(
+                          'Reset',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 50, 140, 27),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
