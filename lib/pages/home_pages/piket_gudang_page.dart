@@ -107,6 +107,70 @@ class _PiketGudangPageState extends State<PiketGudangPage> {
                 },
               ),
               const SizedBox(height: 16),
+              const Text(
+                'Pilih Tanggal',
+                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+              ),
+              const SizedBox(height: 8),
+              GestureDetector(
+                onTap: () => _selectDate(context),
+                child: Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 12,
+                  ),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                    border: Border.all(
+                      color:
+                          _timeError
+                              ? Colors.red
+                              : const Color.fromARGB(255, 0, 0, 0),
+                    ),
+                  ),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.calendar_today,
+                            size: 18,
+                            color: Colors.grey.shade600,
+                          ),
+                          const SizedBox(width: 8),
+                          Text(
+                            _selectedDate == null
+                                ? 'Pilih Tanggal'
+                                : DateFormat(
+                                  'dd-MM-yyyy',
+                                ).format(_selectedDate!),
+                            style: TextStyle(
+                              color:
+                                  _selectedDate == null
+                                      ? Colors.grey.shade600
+                                      : Colors.black,
+                              fontSize: 14,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              if (_timeError)
+                Padding(
+                  padding: const EdgeInsets.only(top: 4, left: 16),
+                  child: Text(
+                    'Please select a date',
+                    style: TextStyle(color: Colors.red, fontSize: 12),
+                  ),
+                ),
+              const SizedBox(height: 16),
+              const Text(
+                'Tugas Piket',
+                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+              ),
             ],
           ),
         ),
