@@ -13,6 +13,8 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
+  bool _obscurePassword = true;
+
   @override
   void initState() {
     super.initState();
@@ -27,16 +29,21 @@ class _LoginPageState extends State<LoginPage> {
           child: Form(
             key: formKey,
             child: Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.only(top: 50, left: 16, right: 16),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset('assets/logo-UMY.png', width: 200, height: 200),
-                  Text(
-                    'SELAMAT DATANG KEMBALI',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  Image.asset('assets/logo-UMY.png', width: 100, height: 100),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 5, bottom: 30),
+                    child: Text(
+                      'SELAMAT DATANG KEMBALI',
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
-                  SizedBox(height: 16),
                   Padding(
                     padding: const EdgeInsets.only(bottom: 10),
                     child: Align(
@@ -50,7 +57,7 @@ class _LoginPageState extends State<LoginPage> {
                   TextFormField(
                     controller: emailController,
                     decoration: const InputDecoration(
-                      labelText: 'Email',
+                      hintText: 'Email',
                       prefixIcon: Icon(Icons.email),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -58,13 +65,13 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Please enter your email';
+                        return 'Email tidak boleh kosong';
                       }
                       return null;
                     },
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 10, top: 10),
+                    padding: const EdgeInsets.only(bottom: 15, top: 10),
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
@@ -74,19 +81,31 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   TextFormField(
+                    obscureText: _obscurePassword,
                     controller: passwordController,
-                    decoration: const InputDecoration(
-                      labelText: 'Password',
-                      prefixIcon: Icon(Icons.lock),
-                      suffixIcon: Icon(Icons.visibility_off),
-                      border: OutlineInputBorder(
+                    decoration: InputDecoration(
+                      hintText: 'Password',
+                      prefixIcon: const Icon(Icons.lock),
+                      suffixIcon: IconButton(
+                        icon: Icon(
+                          _obscurePassword
+                              ? Icons.visibility_off
+                              : Icons.visibility,
+                          color: Colors.grey,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            _obscurePassword = !_obscurePassword;
+                          });
+                        },
+                      ),
+                      border: const OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                       ),
                     ),
-                    obscureText: true,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Please enter your password';
+                        return 'Password tidak boleh kosong';
                       }
                       return null;
                     },
@@ -104,8 +123,9 @@ class _LoginPageState extends State<LoginPage> {
                             27,
                           ),
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(20),
                           ),
+                          padding: EdgeInsets.all(20),
                         ),
                         onPressed: () {
                           if (formKey.currentState!.validate()) {
