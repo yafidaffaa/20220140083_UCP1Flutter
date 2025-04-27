@@ -22,5 +22,24 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
   }
 
   @override
-  Widget build(BuildContext context) {}
+  Widget build(BuildContext context) {
+    final formKey = GlobalKey<FormState>();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Data Pelanggan',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+        backgroundColor: Color.fromARGB(255, 50, 140, 27),
+        centerTitle: true,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
+    );
+  }
 }
