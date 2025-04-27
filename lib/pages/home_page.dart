@@ -76,6 +76,10 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.all(15),
+              child: Image.asset('assets/gedung-umy.jpg'),
+            ),
           ],
         ),
       ),
