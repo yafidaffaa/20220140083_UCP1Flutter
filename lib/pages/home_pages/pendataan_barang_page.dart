@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:ucp1_flutter/pages/home_pages/detail_data_pelanggan_page.dart';
+import 'package:ucp1_flutter/pages/home_pages/detail_pendataan_barang.dart';
 import 'package:ucp1_flutter/pages/login_page.dart';
 
 class PendataanBarangPage extends StatefulWidget {
@@ -65,6 +67,19 @@ class _PendataanBarangPageState extends State<PendataanBarangPage> {
         hargaSatuanController.text = 'Rp. ${hargaBarang[selectedBarang]}';
       });
     }
+  }
+
+  void calculateTotalHarga() {
+    int jumlahBarang = int.tryParse(jumlahBarangController.text) ?? 0;
+    int hargaSatuan =
+        int.tryParse(
+          hargaSatuanController.text.replaceAll('Rp. ', '').replaceAll('.', ''),
+        ) ??
+        0;
+
+    setState(() {
+      totalHarga = jumlahBarang * hargaSatuan;
+    });
   }
 
   @override
@@ -325,10 +340,21 @@ class _PendataanBarangPageState extends State<PendataanBarangPage> {
                             });
                           }
                           if (formKey.currentState!.validate()) {
+                            calculateTotalHarga();
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => LoginPage(),
+                                builder:
+                                    (context) => DetailPendataanBarangPage(
+                                      Tanggal: _selectedDate.toString(),
+                                      JenisTransaksi:
+                                          selectedJenisTransaksi.toString(),
+                                      JenisBarang:
+                                          selectedJenisBarang.toString(),
+                                      JumlahBarang: jumlahBarangController.text,
+                                      HargaSatuan: hargaSatuanController.text,
+                                      TotalHarga: totalHarga.toString(),
+                                    ),
                               ),
                             );
                           }
