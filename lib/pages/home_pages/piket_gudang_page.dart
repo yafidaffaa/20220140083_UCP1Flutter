@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:ucp1_flutter/pages/home_pages/detail_piket_gudang_page.dart';
 
 class PiketGudangPage extends StatefulWidget {
   final String email;
@@ -68,7 +69,7 @@ class _PiketGudangPageState extends State<PiketGudangPage> {
         ),
         title: const Text(
           'Piket Gudang',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         backgroundColor: Color.fromARGB(255, 50, 140, 27),
         centerTitle: true,
@@ -222,6 +223,70 @@ class _PiketGudangPageState extends State<PiketGudangPage> {
                     child: const Text('Tambah'),
                   ),
                 ],
+              ),
+              const SizedBox(height: 24),
+              Center(
+                child: const Text(
+                  'Daftar Tugas Piket',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+              ),
+              const SizedBox(height: 16),
+              Expanded(
+                child:
+                    listTugas.isEmpty
+                        ? Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Text(
+                                'Belum ada Data',
+                                style: TextStyle(color: Colors.grey),
+                              ),
+                            ],
+                          ),
+                        )
+                        : ListView.builder(
+                          itemCount: listTugas.length,
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(bottom: 10),
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder:
+                                          (context) => DetailPiketGudangPage(
+                                            listTugas: listTugas[index],
+                                          ),
+                                    ),
+                                  );
+                                },
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 50, 140, 27),
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                  child: ListTile(
+                                    title: Text(
+                                      listTugas[index]['task'],
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    trailing: Icon(
+                                      Icons.arrow_forward_ios,
+                                      color: Colors.white,
+                                      size: 16,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            );
+                          },
+                        ),
               ),
             ],
           ),
