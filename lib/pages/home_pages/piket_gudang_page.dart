@@ -143,7 +143,7 @@ class _PiketGudangPageState extends State<PiketGudangPage> {
                             _selectedDate == null
                                 ? 'Pilih Tanggal'
                                 : DateFormat(
-                                  'dd-MM-yyyy',
+                                  'EEEE, dd-MM-yyyy',
                                 ).format(_selectedDate!),
                             style: TextStyle(
                               color:
