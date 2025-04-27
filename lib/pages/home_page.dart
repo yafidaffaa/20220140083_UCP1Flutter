@@ -54,6 +54,22 @@ class HomePage extends StatelessWidget {
                             ],
                           ),
                         ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 150),
+                          child: IconButton(
+                            onPressed: () {
+                              Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => LoginPage(),
+                                ),
+                                (Route<dynamic> route) => false,
+                              );
+                            },
+                            icon: Icon(Icons.logout),
+                            color: Colors.white,
+                          ),
+                        ),
                       ],
                     ),
                   ],
