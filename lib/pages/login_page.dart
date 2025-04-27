@@ -111,7 +111,7 @@ class _LoginPageState extends State<LoginPage> {
                     },
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 50),
+                    padding: const EdgeInsets.only(top: 70),
                     child: SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
@@ -129,11 +129,12 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         onPressed: () {
                           if (formKey.currentState!.validate()) {
-                            Navigator.pushReplacement(
+                            Navigator.pushAndRemoveUntil(
                               context,
                               MaterialPageRoute(
                                 builder: (context) => const HomePage(),
                               ),
+                              (Route<dynamic> route) => false,
                             );
                           }
                         },
@@ -161,7 +162,7 @@ class _LoginPageState extends State<LoginPage> {
                           TextSpan(
                             text: ' Daftar disini!',
                             style: TextStyle(
-                              color: Colors.green,
+                              color: Color.fromARGB(255, 50, 140, 27),
                               fontWeight: FontWeight.bold,
                             ),
                           ),
