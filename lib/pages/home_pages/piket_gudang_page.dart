@@ -10,6 +10,20 @@ class PiketGudangPage extends StatefulWidget {
 class _PiketGudangPageState extends State<PiketGudangPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        title: const Text(
+          'Piket Gudang',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: const Color.fromARGB(255, 50, 140, 27),
+      ),
+    );
   }
 }
