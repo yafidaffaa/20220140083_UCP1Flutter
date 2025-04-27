@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:ucp1_flutter/pages/home_pages/detail_data_pelanggan_page.dart';
 import 'package:ucp1_flutter/pages/home_pages/detail_pendataan_barang.dart';
-import 'package:ucp1_flutter/pages/login_page.dart';
 
 class PendataanBarangPage extends StatefulWidget {
   const PendataanBarangPage({super.key});
