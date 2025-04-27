@@ -80,6 +80,79 @@ class HomePage extends StatelessWidget {
               padding: const EdgeInsets.all(15),
               child: Image.asset('assets/gedung-umy.jpg'),
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginPage()),
+                      );
+                    },
+                    child: Container(
+                      width: 170,
+                      padding: const EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 50, 140, 27),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Column(
+                        children: [
+                          Icon(
+                            Icons.assignment_add,
+                            color: Colors.white,
+                            size: 50,
+                          ),
+                          const SizedBox(height: 10),
+                          const Text(
+                            'Data Piket',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginPage()),
+                      );
+                    },
+                    child: Container(
+                      width: 170,
+                      padding: const EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 50, 140, 27),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Column(
+                        children: [
+                          Icon(
+                            Icons.groups_rounded,
+                            color: Colors.white,
+                            size: 50,
+                          ),
+                          const SizedBox(height: 10),
+                          const Text(
+                            'Data Pelanggan',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
