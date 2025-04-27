@@ -34,6 +34,26 @@ class HomePage extends StatelessWidget {
                             fit: BoxFit.cover,
                           ),
                         ),
+                        Padding(
+                          padding: const EdgeInsets.all(10),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Selamat Datang',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              Text(
+                                email,
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ],
                     ),
                   ],
