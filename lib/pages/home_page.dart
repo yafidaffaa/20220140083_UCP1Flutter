@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ucp1_flutter/pages/home_pages/data_pelanggan_page.dart';
 import 'package:ucp1_flutter/pages/home_pages/piket_gudang_page.dart';
 import 'package:ucp1_flutter/pages/login_page.dart';
 
@@ -126,7 +126,9 @@ class HomePage extends StatelessWidget {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => LoginPage()),
+                        MaterialPageRoute(
+                          builder: (context) => DataPelangganPage(),
+                        ),
                       );
                     },
                     child: Container(
