@@ -1,9 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class DetailPiketGudangPage extends StatelessWidget {
   final Map<String, dynamic> listTugas;
 
   const DetailPiketGudangPage({super.key, required this.listTugas});
+
+  String _formatDateWithDay(String date) {
+    try {
+      DateTime parsedDate = DateTime.parse(date);
+      String formattedDate = DateFormat(
+        'EEEE, dd MMMM yyyy',
+        'id_ID',
+      ).format(parsedDate);
+      return formattedDate;
+    } catch (e) {
+      return date;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +49,7 @@ class DetailPiketGudangPage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(10),
                     child: Text(
-                      listTugas['date'],
+                      _formatDateWithDay(listTugas['date']),
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,

@@ -117,7 +117,7 @@ class _PendataanBarangPageState extends State<PendataanBarangPage> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 7),
                   GestureDetector(
                     onTap: () => _selectDate(context),
                     child: Container(
@@ -207,7 +207,7 @@ class _PendataanBarangPageState extends State<PendataanBarangPage> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 10, top: 10),
+                    padding: const EdgeInsets.only(bottom: 10, top: 11),
                     child: DropdownButtonFormField<String>(
                       value: selectedJenisBarang,
                       decoration: const InputDecoration(
@@ -295,7 +295,6 @@ class _PendataanBarangPageState extends State<PendataanBarangPage> {
                               readOnly: true,
                               decoration: const InputDecoration(
                                 hintText: 'Harga Satuan',
-                                prefixText: 'Rp. ',
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.all(
                                     Radius.circular(20),
@@ -344,14 +343,14 @@ class _PendataanBarangPageState extends State<PendataanBarangPage> {
                               MaterialPageRoute(
                                 builder:
                                     (context) => DetailPendataanBarangPage(
-                                      Tanggal: _selectedDate.toString(),
-                                      JenisTransaksi:
+                                      tanggal: _selectedDate.toString(),
+                                      jenisTransaksi:
                                           selectedJenisTransaksi.toString(),
-                                      JenisBarang:
+                                      jenisBarang:
                                           selectedJenisBarang.toString(),
-                                      JumlahBarang: jumlahBarangController.text,
-                                      HargaSatuan: hargaSatuanController.text,
-                                      TotalHarga: totalHarga.toString(),
+                                      jumlahBarang: jumlahBarangController.text,
+                                      hargaSatuan: hargaSatuanController.text,
+                                      totalHarga: totalHarga.toString(),
                                     ),
                               ),
                             );
