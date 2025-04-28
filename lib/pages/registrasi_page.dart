@@ -271,7 +271,9 @@ class _RegistrasiPageState extends State<RegistrasiPage> {
                           padding: EdgeInsets.all(20),
                         ),
                         onPressed: () {
-                          if (formKey.currentState!.validate()) {
+                          if (formKey.currentState!.validate() &&
+                              passwordController.text ==
+                                  konfirmasiPasswordController.text) {
                             Navigator.pushAndRemoveUntil(
                               context,
                               MaterialPageRoute(

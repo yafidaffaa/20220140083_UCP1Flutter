@@ -41,7 +41,6 @@ class _PendataanBarangPageState extends State<PendataanBarangPage> {
   @override
   void initState() {
     super.initState();
-    hargaSatuanController.text = 'Rp. 0';
   }
 
   Future<void> _selectDate(BuildContext context) async {
@@ -303,7 +302,7 @@ class _PendataanBarangPageState extends State<PendataanBarangPage> {
                               ),
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return 'Jumlah barang tidak boleh kosong';
+                                  return 'Harga satuan tidak boleh kosong';
                                 }
                                 return null;
                               },

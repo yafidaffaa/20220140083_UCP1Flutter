@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucp1_flutter/pages/home_page.dart';
 
 class DetailPendataanBarangPage extends StatelessWidget {
   final String tanggal;
@@ -106,8 +107,14 @@ class DetailPendataanBarangPage extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
-                      Navigator.pop(context);
+                      Navigator.popUntil(
+                        context,
+                        (route) =>
+                            route is MaterialPageRoute &&
+                            route.builder(context) is HomePage,
+                      );
                     },
+
                     child: const Text(
                       'Selesai',
                       style: TextStyle(

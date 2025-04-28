@@ -179,13 +179,11 @@ class _DetailDataPelangganPageState extends State<DetailDataPelangganPage> {
                         ),
                         onPressed: () {
                           if (formKey.currentState!.validate()) {
-                            Navigator.pushAndRemoveUntil(
+                            Navigator.popUntil(
                               context,
-                              MaterialPageRoute(
-                                builder:
-                                    (context) => HomePage(email: widget.email),
-                              ),
-                              (Route<dynamic> route) => false,
+                              (route) =>
+                                  route is MaterialPageRoute &&
+                                  route.builder(context) is HomePage,
                             );
                           }
                         },
