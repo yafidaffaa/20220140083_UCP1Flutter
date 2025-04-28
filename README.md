@@ -1,6 +1,7 @@
 # ucp1_flutter
 
-Tampilan Aplikasi
+Tampilan Aplikasi:
+
 ![Screenshot 2025-04-28 224619](https://github.com/user-attachments/assets/c77e1852-6610-43cd-8c46-da7a1aa13374)
 ![Screenshot 2025-04-28 224647](https://github.com/user-attachments/assets/0210e8db-2881-4b82-9741-60b81877bde6)
 ![Screenshot 2025-04-28 224744](https://github.com/user-attachments/assets/87c11a2f-7dfd-45b0-97c5-c8bcb59076bb)
@@ -12,5 +13,6 @@ Tampilan Aplikasi
 ![Screenshot 2025-04-28 231009](https://github.com/user-attachments/assets/4834a313-1834-4c30-a1c9-9ff0a8232aaa)
 ![Screenshot 2025-04-28 224605](https://github.com/user-attachments/assets/b489e4d0-add8-4492-99bb-c81c75eaf2d9)
 
-video demonstrasi aplikasi
+video demonstrasi aplikasi:
+
 https://drive.google.com/file/d/11qOvX1O-7cVlZeGNTjG5Zdte-BRY2zwd/view?usp=sharing
