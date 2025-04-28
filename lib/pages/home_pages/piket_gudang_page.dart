@@ -158,7 +158,7 @@ class _PiketGudangPageState extends State<PiketGudangPage> {
                   Padding(
                     padding: const EdgeInsets.only(top: 4, left: 16),
                     child: Text(
-                      'Please select a date',
+                      'Tanggal tidak boleh kosong',
                       style: TextStyle(color: Colors.red, fontSize: 12),
                     ),
                   ),

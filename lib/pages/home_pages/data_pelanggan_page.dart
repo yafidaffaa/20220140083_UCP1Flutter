@@ -166,7 +166,7 @@ class _DataPelangganPageState extends State<DataPelangganPage> {
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Nama cust tidak boleh kosong';
+                        return 'Alamat tidak boleh kosong';
                       }
                       return null;
                     },
